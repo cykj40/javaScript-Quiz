@@ -1,8 +1,9 @@
 var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
+console.log(choices);
 
 var currentQuestion = {};
-var acceptingAnswers = true;
+var acceptingAnswers = false;
 var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
@@ -57,16 +58,19 @@ var questions = [
 ];
 
 
+
+
 var CORRECT_BONUS = 10;
 var MAX_QUESTIONS = 5;
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuestions = [...questions]
+    availableQuestions = [...questions];
     console.log(availableQuestions);
     getNewQuestion();
 };
+
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         return window.location.assign('/end.html');
@@ -86,17 +90,35 @@ getNewQuestion = () => {
     console.log(availableQuestions);
     acceptingAnswers = true;
 };
+
 choices.forEach(choice => {
-    choice.addEventListener(click, e => {
+    choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
         var selectedChoice = e.target;
         var selectedAnswer = selectedChoice.dataset["number"];
 
-        getNewQuestion();
+        var classToApply = 'incorrect';
+        if (selectedAnswer == currentQuestion.answer) {
+            classToApply = 'correct';
+        };console.log(classToApply);
+        
+        selectedChoice.parentElement.classList.add(classToApply);
+        setTimeout( () => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        },1000);
+        
+
+        
+    
+
+        
 
     });
 });
+
+
 
 startGame();

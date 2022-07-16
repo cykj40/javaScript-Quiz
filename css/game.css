@@ -24,3 +24,11 @@
 padding: 24px;
 width: 100%;
 }
+
+.correct {
+    background-color: lightgreen; 
+}
+
+.incorrect {
+    background-color: red;
+}
