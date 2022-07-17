@@ -1,6 +1,7 @@
 var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
-console.log(choices);
+var questionCounterText = document.getElementById('questionCounter');
+var scoreText = document.getElementById('score');
 
 var currentQuestion = {};
 var acceptingAnswers = false;
@@ -77,6 +78,8 @@ getNewQuestion = () => {
     }
 
     questionCounter++;
+    questionCounterText.innerHTML = questionCounter + "/" + MAX_QUESTIONS;
+
     var questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -102,22 +105,31 @@ choices.forEach(choice => {
         var classToApply = 'incorrect';
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = 'correct';
-        };console.log(classToApply);
-        
+        }; console.log(classToApply);
+
+        if (classToApply === "correct") {
+            incrementScore(CORRECT_BONUS);
+        }
+
         selectedChoice.parentElement.classList.add(classToApply);
-        setTimeout( () => {
+        setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
-        },1000);
-        
+        }, 1000);
 
-        
-    
 
-        
+
+
+
+
 
     });
 });
+//score function
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+}
 
 
 
