@@ -75,21 +75,23 @@ startGame = () => {
 
 // timer goes here
 function startTimer(duration, timeLeft) {
-    var timer =duration, minutes, seconds;
-   setInterval(function () {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60,10);
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-    timeLeft.textContent = minutes + ":" + seconds;
+        timeLeft.textContent = minutes + ":" + seconds;
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    if (--timer < 0) {
-        timer = duration;
-    }
-   }, 1000);
-        
-    };
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        if (--timer < 0) {
+            timer = duration;
+            alert("You're out of time!");
+            window.location.assign("end.html");
+        }
+    }, 1000);
+
+};
 
 
 
@@ -140,7 +142,7 @@ choices.forEach(choice => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         }, 1000);
-   });
+    });
 });
 //score function
 incrementScore = num => {
@@ -150,9 +152,9 @@ incrementScore = num => {
 // new stuff
 window.onload = function () {
     var fiveMinutes = 60 * 5,
-    display = document.querySelector('#timeLeft');
+        display = document.querySelector('#timeLeft');
     startTimer(fiveMinutes, display);
 };
 
 
- startGame();
+startGame();
