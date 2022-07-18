@@ -9,6 +9,7 @@ var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
 
+
 var questions = [
 
 
@@ -72,6 +73,28 @@ startGame = () => {
     getNewQuestion();
 };
 
+// timer goes here
+function startTimer(duration, timeLeft) {
+    var timer =duration, minutes, seconds;
+   setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60,10);
+
+    timeLeft.textContent = minutes + ":" + seconds;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    if (--timer < 0) {
+        timer = duration;
+    }
+   }, 1000);
+        
+    };
+
+
+
+
+
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
@@ -124,5 +147,12 @@ incrementScore = num => {
     score += num;
     scoreText.innerText = score;
 };
+// new stuff
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+    display = document.querySelector('#timeLeft');
+    startTimer(fiveMinutes, display);
+};
+
 
  startGame();
