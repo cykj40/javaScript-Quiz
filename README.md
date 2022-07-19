@@ -8,13 +8,13 @@ click [here](https://cykj40.github.io/javaScript-Quiz/) to play!⚡
 
 
 ##resources I used to help make this page
-Google
-Rutgers Coding Bootcamp
-Build a Quiz app with HTML CSS and Javascript by James Q Quick 
-codeGrepper.com
-codepen.io
-w3 schools
-Create a Quiz App with Timer using HTML CSS & JavaScript | Quiz Web App using JavaScript from coding Nepal
+*Google
+*Rutgers Coding Bootcamp
+*Build a Quiz app with HTML CSS and Javascript by James Q Quick 
+*codeGrepper.com
+*codepen.io
+*w3 schools
+*Create a Quiz App with Timer using HTML CSS & JavaScript | Quiz Web App using JavaScript from coding Nepal
 
 ##I am still very new to coding and this project really helped me to incorporate all the skills I learned up until this point from the Rutgers Coding Bootcamp. I learned alot from this project and look foward to creating more.
 
