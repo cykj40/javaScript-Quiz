@@ -4,4 +4,16 @@
 ![Javascriptquiz2](https://user-images.githubusercontent.com/102045473/179737101-f44d6aab-b641-4406-9d1c-fb3f9237ee3b.png)
 ![javascriptquiz3](https://user-images.githubusercontent.com/102045473/179737178-8a588bf5-9ccb-4cda-a6e9-d94ee8d31798.png)
 ![javascriptquiz4](https://user-images.githubusercontent.com/102045473/179737209-e3f915ff-754d-4e12-80de-e4634d24ea9b.png)
-click [here]() to play!⚡
+click [here](https://cykj40.github.io/javaScript-Quiz/) to play!⚡
+##resources I used to help make this page
+Google
+Rutgers Coding Bootcamp
+Build a Quiz app with HTML CSS and Javascript by James Q Quick 
+codeGrepper.com
+codepen.io
+w3 schools
+Create a Quiz App with Timer using HTML CSS & JavaScript | Quiz Web App using JavaScript from coding Nepal
+
+##I am still very new to coding and this project really helped me to incorporate all the skills I learned up until this point from the Rutgers Coding Bootcamp. I learned alot from this project and look foward to creating more.
+
+
